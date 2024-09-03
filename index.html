@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        #form-tarea {
+            background-color: #fff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #form-tarea input[type="text"],
+        #form-tarea input[type="checkbox"],
+        #form-tarea button {
+            margin-bottom: 10px;
+        }
+
+        #form-tarea button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #form-tarea button:hover {
+            background-color: #0056b3;
+        }
+
+        #lista-tareas {
+            list-style: none;
+            padding: 0;
+            width: 300px;
+        }
+
+        #lista-tareas li {
+            background-color: #fff;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #lista-tareas li button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        #lista-tareas li button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gestor de Tareas</h1>
+    
+    <!-- Formulario para crear o actualizar una tarea -->
+    <form id="form-tarea">
+        <input type="text" id="titulo" placeholder="Título" required>
+        <input type="text" id="descripcion" placeholder="Descripción" required>
+        <label>
+            <input type="checkbox" id="completada"> Completada
+        </label>
+        <button type="submit">Agregar Tarea</button>
+        <button type="button" id="actualizar-tarea" style="display: none;">Actualizar Tarea</button>
+    </form>
+
+    <!-- Lista de tareas -->
+    <ul id="lista-tareas">
+        <!-- Las tareas se cargarán aquí -->
+    </ul>
+
+    <script src="app.js"></script>
+</body>
+</html>
